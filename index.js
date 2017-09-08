@@ -20,13 +20,52 @@ const handleIncomingCall = (req, res) => {
         <SpeakSentence gender="female" locale="en_US" voice="susan">${sentence}</SpeakSentence>
     </Gather>
 </Response>`
-
     res.send(bxml);
 };
 
 const handleGatherEvent = (req, res) => {
+    const BAD_DADDY = '+19197479163';
+    const RUCKUS    = '+19198352002';
+    const PAPA_JOHN = '+19198347272';
+    const RED_SKY   = '+19195153112';
     const baseUrl = `http://${req.hostname}`;
-    res.send("hello!");
+    let bxml;
+    console.log(req.query);
+    if (req.query.digits == 1){
+        bxml = `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <SpeakSentence>
+        Transferring you to Pizza!
+    </SpeakSentence>
+    <Transfer>
+        <PhoneNumber>${RUCKUS}</PhoneNumber>
+        <PhoneNumber>${PAPA_JOHN}</PhoneNumber>
+        <PhoneNumber>${RED_SKY}</PhoneNumber>
+    </Transfer>
+</Response>`
+    }
+    else if (req.query.digits == 2) {
+        bxml = `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <SpeakSentence>
+        Transferring you to Bad Daddys!
+    </SpeakSentence>
+    <Transfer>
+        <PhoneNumber>${BAD_DADDY}</PhoneNumber>
+    </Transfer>
+</Response>`
+    }
+    else {
+        bxml = `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <SpeakSentence>
+        I'm sorry, I didn't understand your choice. Please callback and try again.
+    </SpeakSentence>
+<Hangup/>
+</Response>`
+    }
+
+    res.send(bxml);
 };
 
 /* Express Setup */
