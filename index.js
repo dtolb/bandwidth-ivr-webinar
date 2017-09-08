@@ -12,7 +12,14 @@ const IVR_CHOICE    = '/ivr-choice-endpoint';
 /* Event Handlers */
 const handleIncomingCall = (req, res) => {
     const baseUrl = `http://${req.hostname}`;
-    res.send("hello!");
+    const bxml = `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <SpeakSentence>
+        Hello From Bandwidth
+    </SpeakSentence>
+    <Hangup/>
+</Response>`
+    res.send(bxml);
 };
 
 const handleGatherEvent = (req, res) => {
