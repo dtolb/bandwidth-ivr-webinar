@@ -14,3 +14,33 @@ Basic IVR Flow for use with Bandwidth APIs
 * [Git](https://git-scm.com/)
 
 ## Get Ready!
+
+After installing pre-reqs
+
+### Clone this repo then navigate to that folder
+
+```bash
+git clone https://github.com/dtolb/ivr-webinar.git
+```
+
+```bash
+cd ivr-webinar
+```
+
+### Install Dependencies
+
+```bash
+npm i
+```
+
+### Launch the server
+
+```bash
+npm start
+```
+
+### Launch ngrok
+
+```bash
+./ngrok http 3000
+```
