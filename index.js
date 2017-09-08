@@ -7,23 +7,26 @@ const http       = require('http').Server(app);
 
 /* Paths */
 const INCOMING_CALL = '/incoming-call-endpoint';
-const IVR_CHOICE = '/ivr-choice-endpoint';
-const {handleIncomingCall, handleGatherEvent} = require('./routes.js');
+const IVR_CHOICE    = '/ivr-choice-endpoint';
 
+/* Event Handlers */
+const handleIncomingCall = (req, res) => {
+    const baseUrl = `http://${req.hostname}`;
+    res.send("hello!");
+};
+
+const handleGatherEvent = (req, res) => {
+    const baseUrl = `http://${req.hostname}`;
+    res.send("hello!");
+};
 
 /* Express Setup */
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 3000));
 
+app.get('/', (req, res) => {res.send("Hello World")})
 app.get(INCOMING_CALL, handleIncomingCall);
-app.get(IVR_CHOICE, handleGatherEvent);
-
-const bw = new Bandwidth({
-    // uses my environment variables
-    userId    : process.env.BANDWIDTH_USER_ID,
-    apiToken  : process.env.BANDWIDTH_API_TOKEN,
-    apiSecret : process.env.BANDWIDTH_API_SECRET
-});
+app.get(IVR_CHOICE,    handleGatherEvent);
 
 /* Launch the Server */
 http.listen(app.get('port'), function(){
