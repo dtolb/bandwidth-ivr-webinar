@@ -1,0 +1,34 @@
+{
+  "name": "ivr-webinar",
+  "version": "0.0.1",
+  "description": "Scaffold code for use for Bandwidth APIs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtolb/ivr-webinar.git"
+  },
+  "keywords": [
+    "bandwidth",
+    "ivr",
+    "voice",
+    "calling",
+    "phone-call",
+    "phone-tree",
+    "call"
+  ],
+  "author": "Dan Tolbert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dtolb/ivr-webinar/issues"
+  },
+  "homepage": "https://github.com/dtolb/ivr-webinar#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "node-bandwidth": "^2.4.0"
+  }
+}
