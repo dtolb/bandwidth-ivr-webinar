@@ -14,7 +14,7 @@ const handleIncomingCall = (req, res) => {
     const baseUrl = `http://${req.hostname}`;
     const bxml = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <SpeakSentence>
+    <SpeakSentence gender="female" locale="en_US" voice="susan">
         Hello From Bandwidth
     </SpeakSentence>
     <Hangup/>
