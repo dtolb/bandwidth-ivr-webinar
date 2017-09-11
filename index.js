@@ -34,7 +34,7 @@ const handleGatherEvent = (req, res) => {
     if (req.query.digits == 1){
         bxml = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <SpeakSentence>
+    <SpeakSentence gender="female" locale="en_US" voice="susan">
         Transferring you to Pizza!
     </SpeakSentence>
     <Transfer>
@@ -47,7 +47,7 @@ const handleGatherEvent = (req, res) => {
     else if (req.query.digits == 2) {
         bxml = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <SpeakSentence>
+    <SpeakSentence gender="female" locale="en_US" voice="susan">
         Transferring you to Bad Daddys!
     </SpeakSentence>
     <Transfer>
@@ -58,7 +58,7 @@ const handleGatherEvent = (req, res) => {
     else {
         bxml = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <SpeakSentence>
+    <SpeakSentence gender="female" locale="en_US" voice="susan">
         I'm sorry, I didn't understand your choice. Please callback and try again.
     </SpeakSentence>
 <Hangup/>
