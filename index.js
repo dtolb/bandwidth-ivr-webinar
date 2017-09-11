@@ -31,7 +31,7 @@ const handleGatherEvent = (req, res) => {
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 3000));
 
-app.get('/', (req, res) => {res.send("Hello World")})
+app.get('/', (req, res) => {res.send("Hello World")});
 app.get(INCOMING_CALL, handleIncomingCall);
 app.get(IVR_CHOICE,    handleGatherEvent);
 
